@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def hello
-  	render text: "https://polar-garden-12550.herokuapp.com/"
+  	#render text: "https://polar-garden-12550.herokuapp.com/"
   end
 end
