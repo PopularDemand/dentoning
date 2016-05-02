@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
-  def hello
-  	#render text: "https://polar-garden-12550.herokuapp.com/"
-  end
+  # Helpers are only available in views unless included 
+  # in the controllers as below
+  include SessionsHelper
 end

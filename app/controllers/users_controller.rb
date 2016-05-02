@@ -11,8 +11,9 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      log_in @user
       flash[:success] = "Welcome to the community!" #flash hash is available to first page after redirect
-  		redirect_to @user #same as user_url(@user)
+      redirect_to @user #same as user_url(@user)
   	else
   		render 'new'
   	end  	
