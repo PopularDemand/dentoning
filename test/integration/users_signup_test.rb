@@ -25,9 +25,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 															 email: "user@example.com",
 															 password: "password",
 															 password_confirmation: "password"}
-			end
-			assert_template "users/show"
-			assert_not flash.empty?
-			assert is_logged_in?
 		end
+		assert_template "users/show"
+		assert_not flash.empty?
+		assert is_logged_in?
+	end
 end
