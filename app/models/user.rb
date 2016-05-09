@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
 	validates :name, presence: true, length: { maximum: 50 }
 	validates :email, presence: true, length: { maximum: 255 },
 										format: { with: VALID_EMAIL_REGEX },
+				# Added index to emails via migration to ensure uniqueness
 										uniqueness: { case_sensitive: false }
-			# Added index to emails via migration to ensure uniqueness
-	validates :password, presence: true, length: { minimum: 6 }
+				# allow nil only allows nil on updating the profile. has_secure_password doesn't allow on sign up
+	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
 	has_secure_password # requires model to have "password_digest" attribute
 
