@@ -1,0 +1,12 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<!-- uses will paginate gem to overflow users onto separate pages -->
+<%= will_paginate %>
+<ul class="users">
+	<%# Rails infers @users are users and iterates through them %>
+	<%# rendering them with _user partial %>
+	<%= render @users %>
+</ul>
+
+<%= will_paginate %>
