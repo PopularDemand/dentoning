@@ -7,12 +7,14 @@ class SessionsController < ApplicationController
   	if @user && @user.authenticate(params[:session][:password])
   		log_in(@user)
       params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-  		redirect_to @user # auto converts to user_url(@user)
-  	else
+  		# redirect_to @user # auto converts to user_url(@user)
+      redirect_back_or @user
+    else
   		# Use flash.now for actions that render not redirect
   		flash.now[:danger] = 'Invalid email/password'
   		render 'new'
   	end
+
   end
 
   def destroy
