@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-# ruby '2.3.0'
+# ruby '2.3.1'
 gem 'rails',                   '4.2.2'
 gem 'bcrypt',								   '3.1.7' # needed for has_secure_password
 gem 'faker',                   '1.4.2'
