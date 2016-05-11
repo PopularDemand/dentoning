@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   	# Permits the given input fields, and nothing more
   	def user_params
   		params.require(:user).permit(:name, :email, :password,
-  																 :password_confirmation)
+  																 :password_confirmation)#, :admin)
   	end
 
     # Confirms a logged in user
