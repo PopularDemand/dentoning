@@ -1,0 +1,4 @@
+what done
+
+chaged authenticated? user method
+write edit action account activation

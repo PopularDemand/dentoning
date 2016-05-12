@@ -43,10 +43,15 @@ class User < ActiveRecord::Base
 		update_attribute(:remember_digest, nil)
 	end
 
-	def authenticated?(remember_token)
-		return false if remember_digest.nil?
-		# This is a local variable not accessor
-		BCrypt::Password.new(remember_digest).is_password?(remember_token)
+	def authenticated?(attribute, token)
+		digest = self.send("#{attribute}_digest") # officially, don't need 'self'
+		return false if digest.nil?
+		BCrypt::Password.new(digest).is_password?(token)
+
+		## This is rewritten to accomodate account activation token
+		# return false if remember_digest.nil?
+		# # This is a local variable not accessor
+		# BCrypt::Password.new(remember_digest).is_password?(remember_token)
 	end
 
 	private
