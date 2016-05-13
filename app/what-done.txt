@@ -2,3 +2,5 @@ what done
 
 chaged authenticated? user method
 write edit action account activation
+write tests to user signup
+refactor activation steps to user model methods
