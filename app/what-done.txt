@@ -1,6 +1,7 @@
 what done
 
-chaged authenticated? user method
-write edit action account activation
-write tests to user signup
-refactor activation steps to user model methods
+new resource password reset
+user migration
+add user methods for resets
+edit mailer action and views
+edit mailer preview
