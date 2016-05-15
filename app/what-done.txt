@@ -1,7 +1,3 @@
 what done
 
-new resource password reset
-user migration
-add user methods for resets
-edit mailer action and views
-edit mailer preview
+usermailer test
