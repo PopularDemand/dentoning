@@ -1,0 +1,8 @@
+NOTES
+
+Micropost.create == user.microposts.create
+Micropost.create! == user.microposts.create!
+Micropost.new == user.microposts.build
+
+user.microposts.create(arg) -	Creates a micropost associated with user
+user.microposts.create!(arg) -	Creates a micropost associated with user (exception on failure)
