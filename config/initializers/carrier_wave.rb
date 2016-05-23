@@ -11,6 +11,8 @@ if Rails.env.production?
   end
 end
 
-# Some users may have to add :region => ENV[’S3_REGION’] to the fog credentials,
-# followed by heroku config:set S3_REGION=<bucket region> at the command line, where the bucket
-# region should be something like ’eu-central-1’, depending on your location
+if Rails.env.test?
+  CarrierWave.configure do |config|
+    config.enable_processing = false
+  end
+end
