@@ -1,2 +1,4 @@
-Website for Getting Denonites with Other Dentonites
+Site for sharing microposts.
 ***
+
+Made with [Rails Tutorial](www.railsturorial.org)
