@@ -20,6 +20,20 @@ adrian:
   activated: true
   activated_at: <%= Time.zone.now %>
 
+elvis:
+  name: elvis andrus
+  email: elvis@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+sandra:
+  name: sandra bullock
+  email: sandra@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>

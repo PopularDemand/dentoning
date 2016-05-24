@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :microposts, dependent: :destroy
-					 # Find this user by the foreign key follower
+					 # Find this user by the foreign key follower_id
 	has_many :active_relationships,  class_name:  "Relationship",
 																	 foreign_key: "follower_id",
 																	 dependent:   :destroy

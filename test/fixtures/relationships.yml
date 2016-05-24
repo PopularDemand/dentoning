@@ -8,3 +8,20 @@
 # two:
 #   follower_id: 1
 #   followed_id: 1
+
+
+one:
+  follower: alexa
+  followed: michael
+
+two:
+  follower: alexa
+  followed: adrian
+
+three:
+  follower: adrian
+  followed: alexa
+
+four:
+  follower: michael
+  followed: alexa

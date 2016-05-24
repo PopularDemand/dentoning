@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   root                'static_pages#home'
 
   # Users
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   get    'signup'  => 'users#new'
 
   # Sessions
@@ -22,5 +26,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]
 
 end
