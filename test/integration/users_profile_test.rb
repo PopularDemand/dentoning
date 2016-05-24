@@ -19,4 +19,10 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
  			assert_match micropost.content, response.body
  		end
  	end
+
+ 	test "profile page should show relationship stats" do
+ 		get user_path(@user)
+ 		assert_select 'strong#following'
+ 		assert_select 'strong#followers'
+ 	end
 end

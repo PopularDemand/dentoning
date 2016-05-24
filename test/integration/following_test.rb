@@ -55,4 +55,10 @@ class FollowingTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "feed on home page" do
+    get root_path
+    @user.feed.paginate(page: 1).each do |post|
+      assert_match "micropost-#{ post.id }" , response.body
+    end 
+  end
 end
