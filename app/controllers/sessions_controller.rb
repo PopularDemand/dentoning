@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	@user = User.find_by(email: params[:session][:email].downcase)
-  	if @user && @user.authenticate(params[:session][:password])
+    @user = User.find_by(email: params[:session][:email].downcase)
+    if @user && @user.authenticate(params[:session][:password])
       if @user.activated?
-    		log_in(@user)
+        log_in(@user)
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-    		# redirect_to @user # auto converts to user_url(@user)
+        # redirect_to @user # auto converts to user_url(@user)
         redirect_back_or @user
       else
         message = "Account not activared. "
@@ -17,10 +17,10 @@ class SessionsController < ApplicationController
         redirect_to root_url
       end
     else
-  		# Use flash.now for actions that render not redirect
-  		flash.now[:danger] = 'Invalid email/password'
-  		render 'new'
-  	end
+      # Use flash.now for actions that render not redirect
+      flash.now[:danger] = 'Invalid email/password'
+      render 'new'
+    end
   end
 
   def destroy
